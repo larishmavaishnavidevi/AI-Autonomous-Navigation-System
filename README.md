@@ -23,3 +23,26 @@ AI-Autonomous-Navigation-System/
 ├── src/                   # Core source code (Perception/Control)
 ├── requirements.txt       # Project dependencies
 └── README.md              # Project documentation
+
+## 🚀 Final Phase: Full Autonomous Integration
+The final system fuses Computer Vision, Path Planning, and Control Theory into a single real-time loop.
+- **Perception:** YOLOv3 detects obstacles and maps them to a 10x10 navigation grid.
+- **Planning:** A* algorithm recalculates the optimal path in milliseconds when obstacles appear.
+- **Control:** The system calculates real-time steering angles and throttle percentages based on the next path node.
+
+🧠 Core Module Logic
+Vision (YOLOv3): Processes the camera feed using a Deep Neural Network to classify and locate objects. Coordinates are mapped from 2D pixels to a 2D navigation grid.
+
+Brain (A Algorithm):* Uses a heuristic-based search to find the shortest path while avoiding grid cells marked as "blocked" by the Vision module.
+
+Actuation (Trigonometric Control): Uses the atan2 function to calculate the required heading from the current position to the next target coordinate, outputting steering angles.pip freeze > requirements.txt
+
+## 🛠️ How to Run
+1. Clone the repo: `git clone https://github.com/YOUR_USERNAME/AI-Autonomous-Navigation-System.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the system: `python src/autonomous_driver.py`
+
+## 🔮 Future Improvements
+- **Sensor Fusion:** Integrating LiDAR data alongside camera feed for better depth accuracy.
+- **SLAM Implementation:** Moving from a static 10x10 grid to Simultaneous Localization and Mapping.
+- **Performance Optimization:** Converting the model to TensorRT for higher FPS on edge devices.
